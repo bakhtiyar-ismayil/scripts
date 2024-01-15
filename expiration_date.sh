@@ -8,5 +8,10 @@ f=$(date -d "$e" +%s)
 g=$(date -d "$d" +%s)
 h=$((g - f))
 l=$((h / (60*60*24)))
+
+{
 echo $l
+} > /root/output
+
+
 
