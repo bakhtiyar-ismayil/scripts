@@ -14,4 +14,4 @@ echo $l
 } > /root/output
 
 
-
+#or  echo $l | sudo tee   /root/output
