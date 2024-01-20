@@ -8,20 +8,18 @@ bolUpload=0
 log=/home/home/bakhti/logs.txt              
 speedlog=/home/bakhti/iperf3.txt             
 parallel=3                                  
-#Zabbix Sender Variabeles
-ZSERV=172.12.0.2                                #Zabbix Server
-ZPORT=10051                                     #Zabbix Trapper Port (default:10051)
-THOST='xyz'                                     
-ZITEMDOWN=xyz.iperf3.speedtest.down             #Zabbix Itemkey per Download
-ZITEMUP=xyz.iperf3.speedtest.up                 #Zabbix Itemkey per Upload
+SERV=172.12.0.2                          
+PORT=10051                               
+HOST='xyz'                                     
+SITEMDOWN=xyz.iperf3.speedtest.down      
+SITEMUP=xyz.iperf3.speedtest.up          
 
 set -o pipefail
-#echo "$(date +%x_%T)" Script gestartet >> /home/bakhti/scriptbegin.txt
+
 while [ $bolDownload == 0 -o $bolUpload == 0 ]
 do
         if [ $portMin -le $portMax ] 
-        then
-               
+        then              
                 if [ $bolDownload -eq 0 ]
                 then
                         DLOAD=`/usr/bin/iperf3 -f m -c $IPERFS -p $portMin -R -P $parallel |grep sender |grep SUM |awk -F " " '{print $6}'`
@@ -57,11 +55,11 @@ fi
 
 if [ $bolDownload == 1 ]
  then
-        /usr/bin/zabbix_sender -z "$ZSERV" -p "$ZPORT" -s "$THOST" -k "$ZITEMDOWN" -o $DLOAD
+        /usr/bin/zabbix_sender -z "$SERV" -p "$PORT" -s "$HOST" -k "$SITEMDOWN" -o $DLOAD
 fi
 
 
 if [ $bolUpload == 1 ]
  then
-        /usr/bin/zabbix_sender -z "$ZSERV" -p "$PORT" -s "$THOST" -k "$ZITEMUP" -o $ULOAD
+        /usr/bin/zabbix_sender -z "$SERV" -p "$PORT" -s "$THOST" -k "$SITEMUP" -o $ULOAD
 fi
