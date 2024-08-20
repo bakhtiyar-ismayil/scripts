@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#############################################################################################
+# 1. vi /usr/local/bin/openssh_upgrade.sh
+# 2. chmod +x /usr/local/bin/openssh_upgrade.sh
+# 3. bash /usr/local/bin/openssh_upgrade.sh
+# 4. mv /bin/ssh /bin/ssh.old
+# 5. ln -s /usr/local/bin/ssh /bin/ssh
+#############################################################################################
+
 # List of packages to check
 packages=("make" "perl-core" "pcre-devel" "wget" "zlib-devel" "gcc")
 
