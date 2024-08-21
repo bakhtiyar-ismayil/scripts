@@ -12,7 +12,7 @@ This project contains a collection of scripts designed to automate various tasks
 * Basic knowledge of Linux command line interface
 
 ## Installation
-Clone the repository to your local machine using git clone https://gitlab.com/bakhtiyar-ismayil/scripts.git
+Clone the repository to your local machine using git clone https://github.com/bakhtiyar-ismayil/scripts.git
 Navigate to the directory containing the scripts using
 
 ```
