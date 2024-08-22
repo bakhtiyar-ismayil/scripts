@@ -1,4 +1,5 @@
 #!/bin/bash
+
 a=$(sudo chage -l test)
 b=$(echo "$a" | grep 'Password expires')
 c=$(echo "$b" | awk -F': ' '{print $2}')

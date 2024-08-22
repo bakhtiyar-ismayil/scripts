@@ -1,6 +1,7 @@
 # Script Project
 ## Introduction
 
+
 This project contains a collection of scripts designed to automate various tasks for Linux system administrators. These scripts are intended to be used as a learning tool for developing Linux system administration skills, and can be customized and modified to suit specific needs.
 
 ## Requirements

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Set backup directory path
 BACKUP_DIR="/backup"
 
